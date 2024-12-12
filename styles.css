@@ -1,0 +1,149 @@
+:root {
+    --dark-bg: #380116;
+    --darker-mode: #25000e;
+    --dark-hover: #5d0124;
+    --main-font: "Michroma", sans-serif;
+}
+
+/* Estilos generales */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: var(--dark-bg);
+    color: white;
+    font-family: var(--main-font);
+}
+
+/* Estilos del HEADER - titulo y los botones del control */
+
+#container-header {
+    background-color: var(--darker-mode);
+    height: 130px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#container-header #title{
+    margin-top: 10px;
+}
+
+#container-header #container-btn .header-btn {
+    padding: 10px;
+    background-color: transparent;
+    color: white;
+    border: none;
+    margin-top: 20px;
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+
+#container-header #container-btn .header-btn .bi{
+    margin: 5px;
+}
+
+#container-header #container-btn .header-btn:hover{
+    background-color: var(--dark-hover);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* Estilos de la tarjeta del meme - los textos, imagen y el boton de descargar */
+
+#container-editor{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#container-editor #meme-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#container-editor #meme-container #meme-card{
+    height: 620px;
+    width: 620px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+#container-editor #meme-container #meme-card #img-card{
+    background-color: black;
+    height: 500px;
+}
+
+
+#container-editor #meme-container #meme-card .txt{
+    color: black;
+    background-color: white;
+    text-align: center;
+    height: 80px;
+    padding-top: 25px;
+    font-size: 22px;
+}
+
+
+#container-editor #meme-container #download-btn {
+    margin-top: 30px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background-color: #e36414;
+    color: white;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#container-editor #meme-container #download-btn .bi {
+    margin-right: 10px;
+}
+
+/* Los estilos de los controles de la imagen */
+
+#edit-container {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    font-size: 10px;
+    width: 270px;
+    background-color: #2f0112;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 10px;
+}
+
+#edit-container .close-btn{
+    align-self: flex-end;
+    background-color: transparent;
+    color: white;
+    border: none;
+    font-size: 20px;
+    margin: 10px 20px;
+    cursor: pointer;
+}
+
+#edit-container .title-panel{
+    text-align: center;
+}
+
+#edit-container .container-filters{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.hidden{
+    display: none;
+}
