@@ -17,6 +17,7 @@ body{
     background-color: var(--dark-bg);
     color: white;
     font-family: var(--main-font);
+    position: relative;
 }
 
 /* Estilos del HEADER - titulo y los botones del control */
@@ -30,11 +31,11 @@ body{
     justify-content: center;
 }
 
-#container-header #title{
+#container-header #title-header{
     margin-top: 10px;
 }
 
-#container-header #container-btn .header-btn {
+#container-header #container-btn-header .header-btn {
     padding: 10px;
     background-color: transparent;
     color: white;
@@ -44,11 +45,11 @@ body{
     letter-spacing: 1px;
 }
 
-#container-header #container-btn .header-btn .bi{
+#container-header #container-btn-header .header-btn .bi{
     margin: 5px;
 }
 
-#container-header #container-btn .header-btn:hover{
+#container-header #container-btn-header .header-btn:hover{
     background-color: var(--dark-hover);
     border-radius: 10px;
     cursor: pointer;
@@ -95,6 +96,7 @@ body{
 
 #container-editor #meme-container #download-btn {
     margin-top: 30px;
+    margin-bottom: 50px;
     padding: 10px 20px;
     border-radius: 10px;
     background-color: #e36414;
@@ -110,8 +112,8 @@ body{
 
 /* Los estilos de los controles de la imagen */
 
-#edit-container {
-    position: fixed;
+#edit-container-aside {
+    position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
@@ -122,9 +124,10 @@ body{
     flex-direction: column;
     justify-content: flex-start;
     padding: 10px;
+    z-index: 999;
 }
 
-#edit-container .close-btn{
+#edit-container-aside .close-btn{
     align-self: flex-end;
     background-color: transparent;
     color: white;
@@ -134,14 +137,110 @@ body{
     cursor: pointer;
 }
 
-#edit-container .title-panel{
+#edit-container-aside .title-panel{
     text-align: center;
 }
 
-#edit-container .container-filters{
+#edit-container-aside .container-filter{
     display: flex;
     flex-direction: column;
     padding: 10px;
+}
+
+.edit .edit-title{
+    padding: 10px;
+}
+
+.edit .edit-input{
+    height: 35px;
+    width: 95%;
+    background-color: var(--dark-hover);
+    border: none;
+}
+
+.edit .edit-input:focus{
+    outline: 1px dashed white;
+    background-color: #7c0533;
+}
+
+#edit-img #bg-color-options{
+    display: flex;
+    justify-content: space-between;
+    width: 95%;
+}
+
+#edit-img #bg-color-options #edit-container-options-bg{
+    background-color: var(--dark-hover);
+    display: flex;
+    padding: 7px;
+}
+
+#edit-img #bg-color-options #edit-container-options-bg span{
+    padding-left: 10px;
+    font-size: 12px;
+}
+
+/* hacer que el input de color type no tenga el borde gris sino que sea un pequeno circulo */
+
+input[type="color"] {
+    -webkit-appearance: none;  
+    -moz-appearance: none;     
+    appearance: none;
+    width: 20px;  
+    height: 20px; 
+    padding: 0;
+    border: none;
+    border-radius: 50%;  
+    cursor: pointer;
+    background-color: transparent;
+    box-shadow: none;  
+}
+  
+input[type="color"]::-webkit-color-swatch-wrapper {
+    padding: 0;  
+}
+  
+  input[type="color"]::-webkit-color-swatch {
+    border-radius: 50%; 
+}
+
+#bg-color-options #edit-modes-options #select-mode-bg{
+    background-color: #5d0124;
+    color: white;
+    padding: 10px;
+    border: none;
+}
+
+/* FILTROS */
+
+#filters-all .container-filter label{
+    padding-bottom: 5px;
+}
+
+#filters-all .container-filter input[type="range"] {
+    accent-color: var(--dark-hover);
+}
+
+#filters-all .container-filter input[type="range"]:focus,
+#filters-all .container-filter input[type="range"]:active, 
+#filters-all .container-filter input[type="range"]:hover {
+  accent-color: var(--dark-hover);
+}
+
+#edit-img{
+    display: flex;
+    flex-direction: column;
+}
+
+#edit-img .btn-reset{
+    color: white;
+    border: none;
+    background-color: var(--dark-hover);
+    align-self: center;
+    width: 60%;
+    height: 40px;
+    margin-top: 20px;
+    border-radius: 10px;
 }
 
 .hidden{

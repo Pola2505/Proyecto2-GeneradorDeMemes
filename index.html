@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,19 +8,26 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Michroma&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js" integrity="sha512-01CJ9/g7e8cUmY0DFTMcUw/ikS799FHiOA0eyHsUWfOetgbx/t6oV4otQ5zXKQyIrQGTHSmRVPIgrgLcZi/WMA==" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js" integrity="sha512-csNcFYJniKjJxRWRV1R7fvnXrycHP6qDR21mgz1ZP55xY5d+aHLfo9/FcGDQLfn2IfngbAHd8LdfsagcCqgTcQ==" crossorigin="anonymous"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Michroma&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"
+        integrity="sha512-01CJ9/g7e8cUmY0DFTMcUw/ikS799FHiOA0eyHsUWfOetgbx/t6oV4otQ5zXKQyIrQGTHSmRVPIgrgLcZi/WMA=="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"
+        integrity="sha512-csNcFYJniKjJxRWRV1R7fvnXrycHP6qDR21mgz1ZP55xY5d+aHLfo9/FcGDQLfn2IfngbAHd8LdfsagcCqgTcQ=="
+        crossorigin="anonymous"></script>
     <title>Generador de Memes - Sandra Popielarczyk </title>
 </head>
+
 <body>
     <!--  HEADER con titulo y botones  -->
 
     <header id="container-header">
 
-        <h1 id="title">Generador de Memes</h1>
+        <h1 id="title-header">Generador de Memes</h1>
 
-        <div id="container-btn">
+        <div id="container-btn-header">
 
             <button class="header-btn" id="img-btn"><i class="bi bi-file-earmark-image-fill"></i>Imagen</button>
             <button class="header-btn" id="text-btn"><i class="bi bi-chat-left-heart"></i>Texto</button>
@@ -32,223 +40,228 @@
     <!--  FIN DEL HEADER  -->
 
     <!-- MAIN - EL ESPACIO PARA CREAR EL MEME -->
-<div id="container-editor">
+    <div id="container-editor">
 
-    <main class="container-meme" id="meme-container">
+        <main class="container-meme" id="meme-container">
 
-        <div id="meme-card">
+            <div id="meme-card">
 
-            <p class="txt" id="top-text-card">TOP TEXT</p>
-            <div id="img-card"></div>
-            <p class="txt" id="bottom-text-card">BOTTOM TEXT</p>
+                <p class="txt" id="top-text-card">TOP TEXT</p>
+                <div id="img-card"></div>
+                <p class="txt" id="bottom-text-card">BOTTOM TEXT</p>
 
-        </div>
-
-        <button type="button" id="download-btn"><i class="bi bi-cloud-download"></i>Descargar Meme</button>
-
-    </main>
-
-    <!-- FIN DEL MAIN - FIN DEL GENERADOR -->
-
-    <!-- ASIDE - opciones para editar el meme -->
-
-    <aside class="edit" id="edit-container">
-
-        <button class="close-btn" id="close-btn"><i class="bi bi-x-circle"></i></button>
-
-        <!--IMAGE - opciones para editar la imagen-->
-
-        <section class="edit-img" id="edit-img">
-
-            <h2 class="title-panel" id="edit-title-img">IMAGEN</h2>
-
-            <div class="edit-container" id="edit-url-container">
-                <h3 class="edit-title" id="edit-url-title">URL</h3>
-                <input class="edit-input" id="url-input" type="text" aria-label="IMG URL">
             </div>
 
-            <div class="edit-container" id="edit-background-container">
+            <button type="button" id="download-btn"><i class="bi bi-cloud-download"></i>Descargar Meme</button>
 
-                <h3 class="edit-title" id="edit-background-title">FONDO</h3>
+        </main>
 
-                <div class="edit-container-options" id="edit-container-options-bg">
-                    <input type="color" aria-label="Image background color">  
-                    <span>#FFFFFF</span>
+        <!-- FIN DEL MAIN - FIN DEL GENERADOR -->
+
+        <!-- ASIDE - opciones para editar el meme -->
+
+        <aside class="edit" id="edit-container-aside">
+
+            <button class="close-btn" id="close-btn"><i class="bi bi-x-circle"></i></button>
+
+            <!--IMAGE - opciones para editar la imagen-->
+
+            <section class="edit-img" id="edit-img">
+
+                <h2 class="title-panel" id="edit-title-img">IMAGEN</h2>
+
+                <div class="edit-container" id="edit-url-container">
+                    <h3 class="edit-title" id="edit-url-title">URL</h3>
+                    <input class="edit-input" id="url-input" type="text" aria-label="IMG URL">
                 </div>
 
-                <div class="edit-container-options" id="edit-modes-options">
-                    <select name="select-mode" id="">
-                        <option value="unset">Ninguno</option>
-                        <option value="lighten">Aclarar</option>
-                        <option value="darken">Oscurecer</option>
-                        <option value="difference">Diferencia</option>
-                        <option value="luminosity">Luminosidad</option>
-                        <option value="multiply">Multiplicar</option>
+                <div class="edit-container" id="edit-background-container">
+
+                    <h3 class="edit-title" id="edit-background-title">FONDO</h3>
+
+                    <div id="bg-color-options">
+                        <div class="edit-container-options" id="edit-container-options-bg">
+                            <input type="color" aria-label="Image background color">
+                            <span>#FFFFFF</span>
+                        </div>
+
+                        <div class="edit-container-options" id="edit-modes-options">
+                            <select name="select-mode" id="select-mode-bg">
+                                <option value="unset">Ninguno</option>
+                                <option value="lighten">Aclarar</option>
+                                <option value="darken">Oscurecer</option>
+                                <option value="difference">Diferencia</option>
+                                <option value="luminosity">Luminosidad</option>
+                                <option value="multiply">Multiplicar</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="filters-all">
+                    <h3 class="edit-title" id="edit-filter-title">FILTROS</h3>
+
+                    <div class="container-filter">
+                        <label for="brightness">BRILLO</label>
+                        <input type="range" id="brightness">
+                    </div>
+
+                    <div class="container-filter">
+                        <label for="opacity">OPACIDAD</label>
+                        <input type="range" id="opacity">
+                    </div>
+
+                    <div class="container-filter">
+                        <label for="contrast">CONTRASTE</label>
+                        <input type="range" id="contrast">
+                    </div>
+
+                    <div class="container-filter">
+                        <label for="blur">DESENFOQUE</label>
+                        <input type="range" id="blur">
+                    </div>
+
+                    <div class="container-filter">
+                        <label for="greyscale">ESCALA DE GRISES</label>
+                        <input type="range" id="greyscale">
+                    </div>
+
+                    <div class="container-filter">
+                        <label for="sepia">SEPIA</label>
+                        <input type="range" id="sepia">
+                    </div>
+
+                    <div class="container-filter">
+                        <label for="hue-rotation">HUE</label>
+                        <input type="range" id="hue-rotation">
+                    </div>
+
+                    <div class="container-filter">
+                        <label for="saturation">SATURADO</label>
+                        <input type="range" id="saturation">
+                    </div>
+
+                    <div class="container-filter">
+                        <label for="invert">NEGATIVO</label>
+                        <input type="range" id="invert">
+                    </div>
+                </div>
+
+                <button class="btn-reset" id="btn-reset">Restablecer filtros</button>
+
+            </section>
+
+            <!-- FIN DE IMAGEN opciones -->
+
+            <!-- TEXTO - opciones para editar el texto -->
+
+            <section class="edit-text hidden" id="edit-text">
+
+                <h2 class="title-panel" id="edit-title-text">TEXTO</h2>
+
+                <div>
+                    <h3>SUPERIOR</h3>
+                    <textarea class="text-input" name="edit-top-text" id="edit-top-text"
+                        placeholder="TOP TEXT"></textarea>
+                </div>
+                <div>
+                    <input type="checkbox">
+                    <label for="">Sin texto superior</label>
+                </div>
+
+                <div>
+                    <h3>INFERIOR</h3>
+                    <textarea class="text-input" name="edit-bottom-text" id="edit-bottom-text"
+                        placeholder="BOTTOM TEXT"></textarea>
+                </div>
+
+                <div>
+                    <input type="checkbox">
+                    <label for="">Sin texto inferior</label>
+                </div>
+
+                <div>
+                    <h3>FUENTE</h3>
+                    <select name="" id="">
+                        <option value="Arial">Arial</option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                    </select>
+                    <div>
+                        <input type="text">
+                        <div>
+                            <button></button>
+                            <button></button>
+                            <button></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div>
+                        <h3>COLOR</h3>
+                        <div>
+                            <input type="color">
+                            <span>#FFFFF</span>
+                        </div>
+                    </div>
+                    <div>
+                        <h3>FONDO</h3>
+                        <div>
+                            <input type="color">
+                            <span>#FFFFF</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <input type="checkbox">
+                    <label for="">Fondo transparente</label>
+                </div>
+
+                <div>
+                    <h3>CONTORNO</h3>
+                    <div>
+                        <button>Ninguno</button>
+                        <button>Claro</button>
+                        <button>Oscuro</button>
+                    </div>
+                </div>
+
+                <div>
+                    <h3>ESPACIADO</h3>
+                    <input type="number">
+                </div>
+
+                <div>
+                    <h3>INTERLINEADO</h3>
+                    <select name="" id="">
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
                     </select>
                 </div>
-            </div>
 
-            <div>
-                <h3 class="edit-title" id="edit-filter-title">FILTROS</h3>
 
-                <div class="container-filters">
-                    <label for="brightness">BRILLO</label>
-                    <input type="range" id="brightness">
-                </div>
+            </section>
 
-                <div class="container-filters">
-                    <label for="opacity">OPACIDAD</label>
-                    <input type="range" id="opacity">
-                </div>
-
-                <div class="container-filters">
-                    <label for="contrast">CONTRASTE</label>
-                    <input type="range" id="contrast">
-                </div>
-
-                <div class="container-filters">
-                    <label for="blur">DESENFOQUE</label>
-                    <input type="range" id="blur">
-                </div>
-
-                <div class="container-filters">
-                    <label for="greyscale">ESCALA DE GRISES</label>
-                    <input type="range" id="greyscale">
-                </div>
-
-                <div class="container-filters">
-                    <label for="sepia">SEPIA</label>
-                    <input type="range" id="sepia">
-                </div>
-
-                <div class="container-filters">
-                    <label for="hue-rotation">HUE</label>
-                    <input type="range" id="hue-rotation">
-                </div>
-
-                <div class="container-filters">
-                    <label for="saturation">SATURADO</label>
-                    <input type="range" id="saturation">
-                </div>
-
-                <div class="container-filters">
-                    <label for="invert">NEGATIVO</label>
-                    <input type="range" id="invert">
-                </div>
-            </div>
-
-            <button class="btn-reset" id="btn-reset">Restablecer filtros</button>
-
-        </section>
-
-        <!-- FIN DE IMAGEN opciones -->
-
-        <!-- TEXTO - opciones para editar el texto -->
-
-        <section class="edit-text hidden" id="edit-text">
-
-            <h2 class="title-panel" id="edit-title-text">TEXTO</h2>
-
-            <div>
-                <h3>SUPERIOR</h3>
-                <textarea class="text-input" name="edit-top-text" id="edit-top-text" placeholder="TOP TEXT"></textarea>
-            </div>
-            <div>
-                <input type="checkbox">
-                <label for="">Sin texto superior</label>
-            </div>
-
-            <div>
-                <h3>INFERIOR</h3>
-                <textarea class="text-input" name="edit-bottom-text" id="edit-bottom-text" placeholder="BOTTOM TEXT"></textarea>
-            </div>
-
-            <div>
-                <input type="checkbox">
-                <label for="">Sin texto inferior</label>
-            </div>
-
-            <div>
-                <h3>FUENTE</h3>
-                <select name="" id="">
-                    <option value="Arial">Arial</option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                </select>
-                <div>
-                    <input type="text">
-                    <div>
-                        <button></button>
-                        <button></button>
-                        <button></button>
-                    </div>
-                </div>
-            </div>
-
-            <div>
-                <div>
-                    <h3>COLOR</h3>
-                    <div>
-                        <input type="color">
-                        <span>#FFFFF</span>
-                    </div>
-                </div>
-                <div>
-                    <h3>FONDO</h3>
-                    <div>
-                        <input type="color">
-                        <span>#FFFFF</span>
-                    </div>
-                </div>
-            </div>
-
-            <div>
-                <input type="checkbox">
-                <label for="">Fondo transparente</label>
-            </div>
-
-            <div>
-                <h3>CONTORNO</h3>
-                <div>
-                    <button>Ninguno</button>
-                    <button>Claro</button>
-                    <button>Oscuro</button>
-                </div>
-            </div>
-
-            <div>
-                <h3>ESPACIADO</h3>
-                <input type="number">
-            </div>
-
-            <div>
-                <h3>INTERLINEADO</h3>
-                <select name="" id="">
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                </select>
-            </div>
-
-            
-        </section>
-
-    </aside>
+        </aside>
 
 
 
 
-</div>
+    </div>
     <script src="./main.js"></script>
 </body>
+
 </html>
