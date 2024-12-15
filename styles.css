@@ -139,6 +139,7 @@ body{
 
 #edit-container-aside .title-panel{
     text-align: center;
+    padding: 10px;
 }
 
 #edit-container-aside .container-filter{
@@ -151,17 +152,20 @@ body{
     padding: 10px;
 }
 
-.edit .edit-input{
+.edit .edit-input, .edit-text .edit-input, #select-font{
     height: 35px;
     width: 95%;
     background-color: var(--dark-hover);
+    color: white;
     border: none;
+    padding: 10px;
 }
 
 .edit .edit-input:focus{
     outline: 1px dashed white;
     background-color: #7c0533;
 }
+
 
 #edit-img #bg-color-options{
     display: flex;
@@ -230,9 +234,10 @@ input[type="color"]::-webkit-color-swatch-wrapper {
 #edit-img{
     display: flex;
     flex-direction: column;
+    padding: 10px;
 }
 
-#edit-img .btn-reset{
+#edit-img .btn-reset, .edit-text .btn-reset{
     color: white;
     border: none;
     background-color: var(--dark-hover);
@@ -243,6 +248,88 @@ input[type="color"]::-webkit-color-swatch-wrapper {
     border-radius: 10px;
 }
 
-.hidden{
-    display: none;
+/* TEXTO - opciones para editar el texto */
+
+.edit-text{
+    padding: 10px;
 }
+
+.edit-text .text-options{
+    margin: 10px 0;
+}
+
+.edit-text .checkbox-text{
+    display: flex;
+    padding: 10px 0;
+}
+
+
+.edit-text .checkbox-text .checkbox-label{
+    padding-left: 5px;
+}
+
+.edit-text .font-size-container{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+
+.edit-text #font-size{
+    height: 30px;
+    flex:3;
+    background-color: var(--dark-hover);
+    color: white;
+    border: none;
+    padding: 10px;
+}
+
+.edit-text #text-align-container{
+    flex: 2;
+    margin-left: 10px;
+}
+
+.edit-text .bi{
+    font-size: 20px;
+    background-color: var(--dark-hover);
+    border: none;
+    color: white;
+}
+
+.edit-text .color-text{
+    background-color: var(--dark-hover);
+}
+
+.edit-text #color-bg-container-text{
+    display: flex;
+}
+
+.edit-text #color-bg-container-text .color-text{
+    width: 100px;
+    height: 30px;
+}
+
+.contorno-btn button{
+    background-color: var(--dark-hover);
+    color: white;
+    border: none;
+    padding: 5px 15px;
+}
+
+.container-padding #input-padding, .container-interlineado #interlineado{
+    background-color: var(--dark-hover);
+    border: none;
+    color: white;
+    padding: 5px 15px;
+    width: 100%;
+}
+
+
+
+
+
+
+
+/* 
+.hidden{
+    display: none !important;
+} */

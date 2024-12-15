@@ -66,7 +66,7 @@
 
             <!--IMAGE - opciones para editar la imagen-->
 
-            <section class="edit-img" id="edit-img">
+            <section class="edit-img hidden" id="edit-img">
 
                 <h2 class="title-panel" id="edit-title-img">IMAGEN</h2>
 
@@ -155,102 +155,105 @@
 
             <!-- TEXTO - opciones para editar el texto -->
 
-            <section class="edit-text hidden" id="edit-text">
+            <section class="edit-text" id="edit-text">
 
                 <h2 class="title-panel" id="edit-title-text">TEXTO</h2>
 
-                <div>
-                    <h3>SUPERIOR</h3>
-                    <textarea class="text-input" name="edit-top-text" id="edit-top-text"
-                        placeholder="TOP TEXT"></textarea>
-                </div>
-                <div>
-                    <input type="checkbox">
-                    <label for="">Sin texto superior</label>
+                <div class="top-text-container">
+                    <h3 class="text-options" id="top-text">SUPERIOR</h3>
+                    <textarea class="edit-input" name="edit-top-text" id="edit-top-text"
+                    placeholder="TOP TEXT"></textarea>
                 </div>
 
-                <div>
-                    <h3>INFERIOR</h3>
-                    <textarea class="text-input" name="edit-bottom-text" id="edit-bottom-text"
+                <div class="checkbox-text">
+                    <input id="checkbox-top-text" type="checkbox">
+                    <label class="checkbox-label" for="checkbox-top-text">Sin texto superior</label>
+                </div>
+
+                <div class="bottom-text-container">
+                    <h3 class="text-options" id="bottom-text">INFERIOR</h3>
+                    <textarea class="edit-input" name="edit-bottom-text" id="edit-bottom-text"
                         placeholder="BOTTOM TEXT"></textarea>
                 </div>
 
-                <div>
-                    <input type="checkbox">
-                    <label for="">Sin texto inferior</label>
+                <div class="checkbox-text">
+                    <input id="checkbox-bottom" type="checkbox">
+                    <label class="checkbox-label" for="checkbox-bottom">Sin texto inferior</label>
                 </div>
 
                 <div>
-                    <h3>FUENTE</h3>
-                    <select name="" id="">
+                    <h3 class="text-options">FUENTE</h3>
+                    <select name="select-font" id="select-font">
                         <option value="Arial">Arial</option>
-                        <option value=""></option>
-                        <option value=""></option>
-                        <option value=""></option>
-                        <option value=""></option>
-                        <option value=""></option>
-                        <option value=""></option>
-                        <option value=""></option>
-                        <option value=""></option>
-                        <option value=""></option>
+                        <option value="Arial Black">Arial Black</option>
+                        <option value="American Typewriter">American Typewriter</option>
+                        <option value="Andale Mono">Andale Mono</option>
+                        <option value="Comic Sans MS">Comic Sans MS</option>
+                        <option value="Helvetica">Helvetica</option>
+                        <option value="Impact">Impact</option>
+                        <option value="Verdana">Verdana</option>
+                        <option value="Times New Roman">Times New Roman</option>
                     </select>
-                    <div>
-                        <input type="text">
-                        <div>
-                            <button></button>
-                            <button></button>
-                            <button></button>
+
+                    <div class="font-size-container">
+                        <input value="12" id="font-size" type="number" min="12" max="100">
+                        <div id="text-align-container">
+                            <button value="left"><i class="bi bi-text-left"></i></button>
+                            <button value="center"><i class="bi bi-text-center"></i></button>
+                            <button value="right"><i class="bi bi-text-right"></i></button>
                         </div>
                     </div>
                 </div>
 
-                <div>
+                <div id="color-bg-container-text">
                     <div>
-                        <h3>COLOR</h3>
-                        <div>
+                        <h3 class="text-options">COLOR</h3>
+                        <div class="color-text">
                             <input type="color">
                             <span>#FFFFF</span>
                         </div>
                     </div>
                     <div>
-                        <h3>FONDO</h3>
-                        <div>
+                        <h3 class="text-options">FONDO</h3>
+                        <div class="color-text">
                             <input type="color">
                             <span>#FFFFF</span>
                         </div>
                     </div>
                 </div>
 
-                <div>
+                <div class="checkbox-text">
                     <input type="checkbox">
-                    <label for="">Fondo transparente</label>
+                    <label class="checkbox-label" for="checkbox">Fondo transparente</label>
                 </div>
 
                 <div>
-                    <h3>CONTORNO</h3>
-                    <div>
+                    <h3 class="text-options">CONTORNO</h3>
+                    <div class="contorno-btn">
                         <button>Ninguno</button>
                         <button>Claro</button>
                         <button>Oscuro</button>
                     </div>
                 </div>
 
-                <div>
-                    <h3>ESPACIADO</h3>
-                    <input type="number">
+                <div class="container-padding">
+                    <h3 class="text-options">ESPACIADO</h3>
+                    <input value="0" id="input-padding" type="number" min="0" max="100">
                 </div>
 
-                <div>
-                    <h3>INTERLINEADO</h3>
-                    <select name="" id="">
-                        <option value=""></option>
-                        <option value=""></option>
-                        <option value=""></option>
-                        <option value=""></option>
-                        <option value=""></option>
-                        <option value=""></option>
+                <div class="container-interlineado">
+                    <h3 class="text-options">INTERLINEADO</h3>
+                    <select name="interlineado" id="interlineado">
+                        <option value="0.8">0.8</option>
+                        <option value="1">1</option>
+                        <option value="1.2">1.2</option>
+                        <option value="1.5">1.5</option>
+                        <option value="2">2</option>
+                        <option value="2.5">2.5</option>
                     </select>
                 </div>
+
+                <button class="btn-reset" id="btn-reset">Restablecer filtros</button>
 
 
             </section>
