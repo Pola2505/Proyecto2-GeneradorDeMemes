@@ -18,6 +18,8 @@ const $bottomText = $('#edit-bottom-text');
 const $bottomCard = $('#bottom-text-card');
 const $bgColor = $('#bg-color');
 const $bgColorCode = $('#bg-color-code');
+const $checkboxTop = $('#checkbox-top-text')
+const $checkboxBottom = $('#checkbox-bottom');
 
 // -------- HEADER botones - funciones ------------
 
@@ -39,11 +41,11 @@ $textBtn.addEventListener('click', () => {
 
 // La funcion de cerrar el panel de control - por las dudas lo aplique para todos los 3 elementos
 
-// $closeBtn.addEventListener('click', () => {
-//     $aside.classList.add('hidden');
-//     $editText.classList.add('hidden');
-//     $editImg.classList.add('hidden');
-// })
+$closeBtn.addEventListener('click', () => {
+    $aside.classList.add('hidden');
+    $editText.classList.add('hidden');
+    $editImg.classList.add('hidden');
+})
 
 
 
@@ -89,6 +91,22 @@ $bottomText.addEventListener('input', () => {
     $bottomCard.innerText = $bottomText.value;
 })
 
+// Funcion para mostrar el meme sin un texto superior 
+
+$checkboxTop.addEventListener('input', (e) => {
+    if( e.target.checked ) {
+        $topCard.innerText = '';
+    }
+})
+
+// Funcion para mostrar el meme sin un texto inferior
+
+$checkboxBottom.addEventListener('input', (e) => {
+    if( e.target.checked ) {
+        $bottomCard.innerText = '';
+    }
+})
+
 
 
 
@@ -111,3 +129,26 @@ $bottomText.addEventListener('input', () => {
 // $cargarImagen.addEventListener("click", () => {
 //     $contenedorImagen.style.backgroundImage = `url(${$urlImagen.value})`
 // });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Esta función ayuda a verificar si el panel se cierra inesperadamente
+const logCloseEvent = (event) => {
+    console.log("Evento disparado:", event);
+};
+
+// Añadir a los eventos del panel que podrían cerrarlo
+$aside.addEventListener('click', logCloseEvent);
+$editImg.addEventListener('click', logCloseEvent);
+$editText.addEventListener('click', logCloseEvent);
