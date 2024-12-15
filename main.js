@@ -17,6 +17,7 @@ const $topCard = $('#top-text-card');
 const $bottomText = $('#edit-bottom-text');
 const $bottomCard = $('#bottom-text-card');
 const $bgColor = $('#bg-color');
+const $bgColorCode = $('#bg-color-code');
 
 // -------- HEADER botones - funciones ------------
 
@@ -48,6 +49,8 @@ $textBtn.addEventListener('click', () => {
 
 // ---- PANEL IMAGEN - FUNCIONES PARA EL MANEJO DEL PANEL DE EDICION DE IMAGEN -----------
 
+
+
 // La funcion para pegar la url de la imagen y que aparezca en el cuadrado del meme
 
 $urlInput.addEventListener('input', () => {
@@ -58,15 +61,21 @@ $urlInput.addEventListener('input', () => {
     $imgCard.backgroundPosition = 'center';
 })
 
-// La funcion para cambiar el color del fondo de la imagen
+// La funcion para cambiar el color del fondo de la imagen y mostrar el codigo del color
 
 $bgColor.addEventListener('input', () => {
     $imgCard.style.backgroundColor = $bgColor.value;
+    $bgColorCode.innerText = $bgColor.value;
 })
 
 
 
+
+
 // ---- PANEL TEXTO - FUNCIONES PARA EL MANEJO DEL PANEL DE EDICION DE TEXTO -----------
+
+
+
 
 // Funcion para cargar el texto superior
 
