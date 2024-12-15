@@ -12,7 +12,12 @@ const $editText = $('#edit-text');
 const $closeBtn = $('#close-btn');
 const $urlInput = $('#url-input');
 const $imgCard = $('#img-card');
+const $topText = $('#edit-top-text');
+const $topCard = $('#top-text-card');
+const $bottomText = $('#edit-bottom-text');
+const $bottomCard = $('#bottom-text-card');
 
+// -------- HEADER botones - funciones ------------
 
 // Abrir las opciones de edicion de imagen
 
@@ -38,6 +43,10 @@ $textBtn.addEventListener('click', () => {
 //     $editImg.classList.add('hidden');
 // })
 
+
+
+// ---- PANEL IMAGEN - FUNCIONES PARA EL MANEJO DEL PANEL DE EDICION DE IMAGEN -----------
+
 // La funcion para pegar la url de la imagen y que aparezca en el cuadrado del meme
 
 $urlInput.addEventListener('input', () => {
@@ -47,6 +56,24 @@ $urlInput.addEventListener('input', () => {
     $imgCard.style.backgroundRepeat = 'no-repeat';
     $imgCard.backgroundPosition = 'center';
 })
+
+
+
+
+// ---- PANEL TEXTO - FUNCIONES PARA EL MANEJO DEL PANEL DE EDICION DE TEXTO -----------
+
+// Funcion para cargar el texto superior
+
+$topText.addEventListener('input', () => {
+    $topCard.innerText = $topText.value;
+})
+
+// Funcion para cargar el texto inferior
+
+$bottomText.addEventListener('input', () => {
+    $bottomCard.innerText = $bottomText.value;
+})
+
 
 
 
