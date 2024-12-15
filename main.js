@@ -5,17 +5,27 @@ const $ = (element) => document.querySelector(element);
 // Atrapando los elementos del DOM 
 
 const $imgBtn = $('#img-btn');
+const $textBtn = $('#text-btn')
 const $aside = $('#edit-container-aside');
 const $editImg = $('#edit-img');
+const $editText = $('#edit-text');
 
 
 
-
-// Funcion para abrir la seccion de Imagen 
+// Abrir las opciones de edicion de imagen
 
 $imgBtn.addEventListener('click', () => {
     $aside.classList.remove('hidden');
     $editImg.classList.remove('hidden');
+    $editText.classList.add('hidden');
+})
+
+// Abrir las opciones de edicion del texto
+
+$textBtn.addEventListener('click', () => {
+    $aside.classList.remove('hidden');
+    $editText.classList.remove('hidden');
+    $editImg.classList.add('hidden');
 })
 
 
