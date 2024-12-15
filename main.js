@@ -2,7 +2,7 @@
 
 const $ = (element) => document.querySelector(element);
 
-// Atrapando los elementos del DOM 
+// --------------    ELEMENTOS DEL DOM -----------
 
 const $imgBtn = $('#img-btn');
 const $textBtn = $('#text-btn')
@@ -20,8 +20,21 @@ const $bgColor = $('#bg-color');
 const $bgColorCode = $('#bg-color-code');
 const $checkboxTop = $('#checkbox-top-text')
 const $checkboxBottom = $('#checkbox-bottom');
+const $brightness = $('#brightness');
+const $opacity = $('#opacity');
+const $contrast = $('#contrast');
+const $blur = $('#blur');
+const $greyscale = $('#greyscale');
+const $sepia = $('#sepia');
+const $hueRotation = $('#hue-rotation');
+const $saturation = $('#saturation');
+const $invert = $('#invert');
+
+
 
 // -------- HEADER botones - funciones ------------
+
+
 
 // Abrir las opciones de edicion de imagen
 
@@ -70,6 +83,13 @@ $bgColor.addEventListener('input', () => {
     $bgColorCode.innerText = $bgColor.value;
 })
 
+$brightness.addEventListener('input', () => {
+    let aux = $imgCard.style.filter;
+    $imgCard.style.filter = `${aux} brightness(${$brightness.value})`;
+})
+
+
+
 
 
 
@@ -96,6 +116,8 @@ $bottomText.addEventListener('input', () => {
 $checkboxTop.addEventListener('input', (e) => {
     if( e.target.checked ) {
         $topCard.innerText = '';
+    } else {
+        $topCard.innerText = 'TOP TEXT'
     }
 })
 
@@ -104,6 +126,8 @@ $checkboxTop.addEventListener('input', (e) => {
 $checkboxBottom.addEventListener('input', (e) => {
     if( e.target.checked ) {
         $bottomCard.innerText = '';
+    } else {
+        $bottomCard.innerText = 'BOTTOM TEXT';
     }
 })
 
