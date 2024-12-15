@@ -16,6 +16,7 @@ const $topText = $('#edit-top-text');
 const $topCard = $('#top-text-card');
 const $bottomText = $('#edit-bottom-text');
 const $bottomCard = $('#bottom-text-card');
+const $bgColor = $('#bg-color');
 
 // -------- HEADER botones - funciones ------------
 
@@ -57,6 +58,11 @@ $urlInput.addEventListener('input', () => {
     $imgCard.backgroundPosition = 'center';
 })
 
+// La funcion para cambiar el color del fondo de la imagen
+
+$bgColor.addEventListener('input', () => {
+    $imgCard.style.backgroundColor = $bgColor.value;
+})
 
 
 
