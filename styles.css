@@ -81,6 +81,7 @@ body{
 #container-editor #meme-container #meme-card #img-card{
     background-color: black;
     height: 500px;
+    width: 100%;
 }
 
 
@@ -321,6 +322,13 @@ input[type="color"]::-webkit-color-swatch-wrapper {
     color: white;
     padding: 5px 15px;
     width: 100%;
+}
+
+/* MODO CLARO */
+
+.light-mode-header{
+    background-color: #dcbbc7 !important;
+    color: rgb(44, 44, 44);
 }
 
 
