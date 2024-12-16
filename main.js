@@ -38,6 +38,10 @@ const $fontSize = $('#font-size');
 const $alignLeft = $('#align-left');
 const $alignCenter = $('#align-center');
 const $alignRight = $('#align-right');
+const $textColor = $('#text-color');
+const $textBgColor = $('#text-bg-color');
+
+
 // -------- HEADER botones - funciones ------------
 
 
@@ -237,6 +241,17 @@ $alignRight.addEventListener('click', () => {
 
 // Cambiar el color del texto en TOP TEXT Y BOTTOM TEXT
 
+$textColor.addEventListener('input', () => {
+    $topCard.style.color = `${$textColor.value}`;
+    $bottomCard.style.color = `${$textColor.value}`;
+})
+
+// Cambiar el color de fondo en TOP TEXT Y BOTTOM TEXT
+
+$textBgColor.addEventListener('input', () => {
+    $topCard.style.backgroundColor = `${$textBgColor.value}`;
+    $bottomCard.style.backgroundColor = `${$textBgColor.value}`;
+})
 
 
 
