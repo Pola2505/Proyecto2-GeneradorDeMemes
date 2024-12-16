@@ -34,7 +34,7 @@ const $resetImg = $('#btn-reset-img');
 const $resetText = $('#btn-reset-text');
 const $downloadBtn = $('#download-btn');
 const $selectFont = $('#select-font');
-
+const $fontSize = $('#font-size');
 // -------- HEADER botones - funciones ------------
 
 
@@ -208,6 +208,12 @@ $selectFont.addEventListener('input', () => {
     $card.style.fontFamily = `${$selectFont.value}, sans-serif`;
 })
 
+// Cambia el tamano de la fuenta en el meme
+
+$fontSize.addEventListener('input', () => {
+    $topCard.style.fontSize = `${$fontSize.value}px`;
+    $bottomCard.style.fontSize = `${$fontSize.value}px`;
+})
 
 
 
