@@ -46,6 +46,7 @@ const $shadowNone = $('#shadow-none');
 const $shadowWhite = $('#shadow-white');
 const $shadowBlack = $('#shadow-black');
 const $inputPadding = $('#input-padding');
+const $interlineado = $('#interlineado');
 
 
 // -------------------------------------------------------------------------------- HEADER ------------------------------------------------------------------------------------
@@ -299,6 +300,12 @@ $inputPadding.addEventListener('input', () => {
     $topCard.style.paddingTop = `${$inputPadding.value}px`;
     $bottomCard.style.paddingBottom = `${$inputPadding.value}px`;
     $bottomCard.style.paddingTop = `${$inputPadding.value}px`;
+})
+
+// Funcion de interlineado 
+
+$interlineado.addEventListener('input', () => {
+    $topCard.style.lineHeight = `${$interlineado.value}`;
 })
 
 
