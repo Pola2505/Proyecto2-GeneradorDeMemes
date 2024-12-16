@@ -165,6 +165,8 @@ $resetImg.addEventListener('click', () => {
 })
 
 
+
+
 // ---- PANEL TEXTO - FUNCIONES PARA EL MANEJO DEL PANEL DE EDICION DE TEXTO -----------
 
 
@@ -211,39 +213,7 @@ $checkboxBottom.addEventListener('input', (e) => {
 
 
 
-// $botonDescargar.addEventListener("click", () => {
-//     // $card.style.width = "500px"
-//     domtoimage.toBlob($card).then((blob) => {
-//         saveAs(blob, "mi-meme.png");
-//     }).catch((error) =>{
-//         console.log (error)
-//     } ) ;
-
-// })
-
-// $cargarImagen.addEventListener("click", () => {
-//     $contenedorImagen.style.backgroundImage = `url(${$urlImagen.value})`
-// });
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-// Esta función ayuda a verificar si el panel se cierra inesperadamente
-const logCloseEvent = (event) => {
-    console.log("Evento disparado:", event);
-};
-
-// Añadir a los eventos del panel que podrían cerrarlo
-$aside.addEventListener('click', logCloseEvent);
-$editImg.addEventListener('click', logCloseEvent);
-$editText.addEventListener('click', logCloseEvent);
