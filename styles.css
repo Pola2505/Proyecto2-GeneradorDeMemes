@@ -1,9 +1,24 @@
+
+
 :root {
     --dark-bg: #380116;
     --darker-mode: #25000e;
     --dark-hover: #5d0124;
     --main-font: "Michroma", sans-serif;
 }
+
+/* NOMBRES DE LAS FUENTES PARA ELEGIR::
+
+font-family: "Orbitron", sans-serif;
+font-family: "Nunito", sans-serif;
+font-family: "Raleway", sans-serif;
+font-family: "Oswald", sans-serif;
+font-family: "Poppins", sans-serif;
+font-family: "Montserrat", sans-serif;
+font-family: "Roboto", serif;
+font-family: "Michroma", serif;
+
+*/
 
 /* Estilos generales */
 

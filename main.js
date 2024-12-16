@@ -33,7 +33,7 @@ const $invert = $('#invert');
 const $resetImg = $('#btn-reset-img');
 const $resetText = $('#btn-reset-text');
 const $downloadBtn = $('#download-btn');
-
+const $selectFont = $('#select-font');
 
 // -------- HEADER botones - funciones ------------
 
@@ -170,8 +170,6 @@ $resetImg.addEventListener('click', () => {
 // ---- PANEL TEXTO - FUNCIONES PARA EL MANEJO DEL PANEL DE EDICION DE TEXTO -----------
 
 
-
-
 // Funcion para cargar el texto superior
 
 $topText.addEventListener('input', () => {
@@ -202,6 +200,12 @@ $checkboxBottom.addEventListener('input', (e) => {
     } else {
         $bottomCard.innerText = 'BOTTOM TEXT';
     }
+})
+
+// Funcion para cambiar la fuente del texto dentro del $card
+
+$selectFont.addEventListener('input', () => {
+    $card.style.fontFamily = `${$selectFont.value}, sans-serif`;
 })
 
 
