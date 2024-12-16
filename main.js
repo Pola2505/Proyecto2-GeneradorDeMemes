@@ -4,6 +4,7 @@ const $ = (element) => document.querySelector(element);
 
 // --------------    ELEMENTOS DEL DOM -----------
 
+const $card = $('#meme-card')
 const $imgBtn = $('#img-btn');
 const $textBtn = $('#text-btn')
 const $aside = $('#edit-container-aside');
@@ -62,6 +63,17 @@ $closeBtn.addEventListener('click', () => {
     $editImg.classList.add('hidden');
 })
 
+// ------------- CARD MEME ------------------------
+
+$downloadBtn.addEventListener("click", () => {
+    // $card.style.width = "500px"
+    domtoimage.toBlob($card).then((blob) => {
+        saveAs(blob, "mi-meme.png");
+    }).catch((error) =>{
+        console.log (error)
+    } ) ;
+
+})
 
 
 // ---- PANEL IMAGEN - FUNCIONES PARA EL MANEJO DEL PANEL DE EDICION DE IMAGEN -----------
