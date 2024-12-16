@@ -40,6 +40,10 @@ const $alignCenter = $('#align-center');
 const $alignRight = $('#align-right');
 const $textColor = $('#text-color');
 const $textBgColor = $('#text-bg-color');
+const $checkboxTransparent = $('#checkbox-transparent');
+const $shadowNone = $('#shadow-none');
+const $shadowWhite = $('#shadow-white');
+const $shadowBlack = $('#shadow-black');
 
 
 // -------- HEADER botones - funciones ------------
@@ -253,6 +257,36 @@ $textBgColor.addEventListener('input', () => {
     $bottomCard.style.backgroundColor = `${$textBgColor.value}`;
 })
 
+// Poner el fondo transparente al texto
+
+$checkboxTransparent.addEventListener('input', (e) => {
+
+    if(e.target.checked) {
+        $topCard.style.backgroundColor = 'transparent';
+        $bottomCard.style.backgroundColor = 'transparent';
+    } else {
+        $topCard.style.backgroundColor = `${$textBgColor.value}`;
+        $bottomCard.style.backgroundColor = `${$textBgColor.value}`;
+    }
+
+})
+
+// Hacer el text shadow en la parte de contorno - ninguno, claro y oscuro
+
+$shadowNone.addEventListener('click', () => {
+    $topCard.style.textShadow = 'none';
+    $bottomCard.style.textShadow = 'none';
+})
+
+$shadowWhite.addEventListener('click', () => {
+    $topCard.style.textShadow = 'rgb(255, 255, 255) 2px 2px 0px, rgb(255, 255, 255) -2px 2px 0px, rgb(255, 255, 255) 2px -2px 0px, rgb(255, 255, 255) -2px -2px 0px';
+    $bottomCard.style.textShadow = 'rgb(255, 255, 255) 2px 2px 0px, rgb(255, 255, 255) -2px 2px 0px, rgb(255, 255, 255) 2px -2px 0px, rgb(255, 255, 255) -2px -2px 0px';
+})
+
+$shadowBlack.addEventListener('click', () => {
+    $topCard.style.textShadow = 'rgb(0, 0, 0) 2px 2px 0px, rgb(0, 0, 0) -2px 2px 0px, rgb(0, 0, 0) 2px -2px 0px, rgb(0, 0, 0) -2px -2px 0px';
+    $bottomCard.style.textShadow = 'rgb(0, 0, 0) 2px 2px 0px, rgb(0, 0, 0) -2px 2px 0px, rgb(0, 0, 0) 2px -2px 0px, rgb(0, 0, 0) -2px -2px 0px';
+})
 
 
 
