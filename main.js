@@ -2,7 +2,8 @@
 
 const $ = (element) => document.querySelector(element);
 
-// --------------    ELEMENTOS DEL DOM -----------
+// 
+// -------------------------------------------------------------------------- ELEMENTOS DEL DOM -------------------------------------------------------------------------------
 
 const $card = $('#meme-card')
 const $imgBtn = $('#img-btn');
@@ -44,9 +45,10 @@ const $checkboxTransparent = $('#checkbox-transparent');
 const $shadowNone = $('#shadow-none');
 const $shadowWhite = $('#shadow-white');
 const $shadowBlack = $('#shadow-black');
+const $inputPadding = $('#input-padding');
 
 
-// -------- HEADER botones - funciones ------------
+// -------------------------------------------------------------------------------- HEADER ------------------------------------------------------------------------------------
 
 
 
@@ -74,7 +76,8 @@ $closeBtn.addEventListener('click', () => {
     $editImg.classList.add('hidden');
 })
 
-// ------------- CARD MEME ------------------------
+
+// -------------------------------------------------------------------------------- MEME ------------------------------------------------------------------------------------
 
 $downloadBtn.addEventListener("click", () => {
     // $card.style.width = "500px"
@@ -87,7 +90,8 @@ $downloadBtn.addEventListener("click", () => {
 })
 
 
-// ---- PANEL IMAGEN - FUNCIONES PARA EL MANEJO DEL PANEL DE EDICION DE IMAGEN -----------
+
+// -------------------------------------------------------------------------------- IMAGEN ------------------------------------------------------------------------------------
 
 
 
@@ -178,7 +182,7 @@ $resetImg.addEventListener('click', () => {
 
 
 
-// ---- PANEL TEXTO - FUNCIONES PARA EL MANEJO DEL PANEL DE EDICION DE TEXTO -----------
+// -------------------------------------------------------------------------------- TEXTO ------------------------------------------------------------------------------------
 
 
 // Funcion para cargar el texto superior
@@ -286,6 +290,15 @@ $shadowWhite.addEventListener('click', () => {
 $shadowBlack.addEventListener('click', () => {
     $topCard.style.textShadow = 'rgb(0, 0, 0) 2px 2px 0px, rgb(0, 0, 0) -2px 2px 0px, rgb(0, 0, 0) 2px -2px 0px, rgb(0, 0, 0) -2px -2px 0px';
     $bottomCard.style.textShadow = 'rgb(0, 0, 0) 2px 2px 0px, rgb(0, 0, 0) -2px 2px 0px, rgb(0, 0, 0) 2px -2px 0px, rgb(0, 0, 0) -2px -2px 0px';
+})
+
+// Espaciado al texto - padding bottom y top
+
+$inputPadding.addEventListener('input', () => {
+    $topCard.style.paddingBottom = `${$inputPadding.value}px`;
+    $topCard.style.paddingTop = `${$inputPadding.value}px`;
+    $bottomCard.style.paddingBottom = `${$inputPadding.value}px`;
+    $bottomCard.style.paddingTop = `${$inputPadding.value}px`;
 })
 
 
