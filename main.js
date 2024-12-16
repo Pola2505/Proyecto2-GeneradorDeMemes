@@ -29,7 +29,9 @@ const $sepia = $('#sepia');
 const $hueRotate = $('#hue-rotate');
 const $saturate = $('#saturate');
 const $invert = $('#invert');
-
+const $resetImg = $('#btn-reset-img');
+const $resetText = $('#btn-reset-text');
+const $downloadBtn = $('#download-btn');
 
 
 // -------- HEADER botones - funciones ------------
@@ -69,7 +71,7 @@ $closeBtn.addEventListener('click', () => {
 // La funcion para pegar la url de la imagen y que aparezca en el cuadrado del meme
 
 $urlInput.addEventListener('input', () => {
-    const url = $urlInput.value;
+    let url = $urlInput.value;
     $imgCard.style.backgroundImage = `url(${url})`;
     $imgCard.style.backgroundSize = 'cover';
     $imgCard.style.backgroundRepeat = 'no-repeat';
@@ -83,58 +85,72 @@ $bgColor.addEventListener('input', () => {
     $bgColorCode.innerText = $bgColor.value;
 })
 
-// Funcion para sumar filtros - la cree porque tuve problemas que desaparecia la imagen cuando guarde los filtros anteriores en un auxiliar y intente concatenarlos
-
-function applyFilter(filter) {
-    let currentFilters = $imgCard.style.filter || ''; 
-
-    if (!currentFilters.includes(filter)) {
-        if (currentFilters !== '') {
-            currentFilters += ' ';
-        }
-        currentFilters += filter;
-    }
-
-    $imgCard.style.filter = currentFilters;
-}
-
-// Aplicando la funcion a todos los filtros 
+// Aplicando los filtros en la imagen 
 
 $brightness.addEventListener('input', () => {
-    applyFilter(`brightness(${ $brightness.value })`);
+
+    $imgCard.style.filter = `brightness(${ $brightness.value })`;
+   
 });
 
 $opacity.addEventListener('input', () => {
-    applyFilter(`opacity(${ $opacity.value })`);
+    
+    $imgCard.style.filter = `opacity(${ $opacity.value })`;
+
 });
 
 $contrast.addEventListener('input', () => {
-    applyFilter(`contrast(${ $contrast.value })`);
+   
+    $imgCard.style.filter = `contrast(${ $contrast.value }%)`;
+
 });
 
 $blur.addEventListener('input', () => {
-    applyFilter(`blur(${ $blur.value })`);
+
+    $imgCard.style.filter = `blur(${ $blur.value }px)`;
+
 });
 
 $grayscale.addEventListener('input', () => {
-    applyFilter(`grayscale(${ $grayscale.value })`);
+    
+    $imgCard.style.filter = `grayscale(${ $grayscale.value }%)`;
+
 });
 
 $sepia.addEventListener('input', () => {
-    applyFilter(`sepia(${ $sepia.value })`);
+
+    $imgCard.style.filter = `sepia(${ $sepia.value }%)`;
+
 });
 
 $hueRotate.addEventListener('input', () => {
-    applyFilter(`hue-rotate(${ $hueRotate.value }deg)`);
+
+    $imgCard.style.filter = `hue-rotate(${ $hueRotate.value }deg)`;
+
 });
 
 $saturate.addEventListener('input', () => {
-    applyFilter(`saturate(${ $saturate.value })`);
+
+    $imgCard.style.filter = `saturate(${ $saturate.value }%)`;
+
 });
 
 $invert.addEventListener('input', () => {
-    applyFilter(`invert(${ $invert.value })`);
+
+    $imgCard.style.filter = `invert(${ $invert.value })`;
+
 });
+
+// Funcion para restablecer los valores cambiados;
+
+$resetImg.addEventListener('click', () => {
+    $urlInput.value = '';
+    $imgCard.style.backgroundImage = '';
+    $imgCard.style.backgroundColor = 'black';
+    $bgColor.value = '#FFFFFF';
+    $bgColorCode.innerText = $bgColor.value;
+    $imgCard.style.filter = '';
+})
 
 
 // ---- PANEL TEXTO - FUNCIONES PARA EL MANEJO DEL PANEL DE EDICION DE TEXTO -----------
