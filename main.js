@@ -35,6 +35,9 @@ const $resetText = $('#btn-reset-text');
 const $downloadBtn = $('#download-btn');
 const $selectFont = $('#select-font');
 const $fontSize = $('#font-size');
+const $alignLeft = $('#align-left');
+const $alignCenter = $('#align-center');
+const $alignRight = $('#align-right');
 // -------- HEADER botones - funciones ------------
 
 
@@ -214,6 +217,26 @@ $fontSize.addEventListener('input', () => {
     $topCard.style.fontSize = `${$fontSize.value}px`;
     $bottomCard.style.fontSize = `${$fontSize.value}px`;
 })
+
+// Alineacion del texto - izquierda, derecha y centro en topCard y bottomCard
+
+$alignLeft.addEventListener('click', () => {
+    $topCard.style.textAlign = `${$alignLeft.value}`;
+    $bottomCard.style.textAlign = `${$alignLeft.value}`;
+})
+
+$alignCenter.addEventListener('click', () => {
+    $topCard.style.textAlign = `${$alignCenter.value}`;
+    $bottomCard.style.textAlign = `${$alignCenter.value}`;
+})
+
+$alignRight.addEventListener('click', () => {
+    $topCard.style.textAlign = `${$alignRight.value}`;
+    $bottomCard.style.textAlign = `${$alignRight.value}`;
+})
+
+// Cambiar el color del texto en TOP TEXT Y BOTTOM TEXT
+
 
 
 
