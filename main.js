@@ -24,10 +24,10 @@ const $brightness = $('#brightness');
 const $opacity = $('#opacity');
 const $contrast = $('#contrast');
 const $blur = $('#blur');
-const $greyscale = $('#greyscale');
+const $grayscale = $('#grayscale');
 const $sepia = $('#sepia');
-const $hueRotation = $('#hue-rotation');
-const $saturation = $('#saturation');
+const $hueRotate = $('#hue-rotate');
+const $saturate = $('#saturate');
 const $invert = $('#invert');
 
 
@@ -83,15 +83,58 @@ $bgColor.addEventListener('input', () => {
     $bgColorCode.innerText = $bgColor.value;
 })
 
+// Funcion para sumar filtros - la cree porque tuve problemas que desaparecia la imagen cuando guarde los filtros anteriores en un auxiliar y intente concatenarlos
+
+function applyFilter(filter) {
+    let currentFilters = $imgCard.style.filter || ''; 
+
+    if (!currentFilters.includes(filter)) {
+        if (currentFilters !== '') {
+            currentFilters += ' ';
+        }
+        currentFilters += filter;
+    }
+
+    $imgCard.style.filter = currentFilters;
+}
+
+// Aplicando la funcion a todos los filtros 
+
 $brightness.addEventListener('input', () => {
-    let aux = $imgCard.style.filter;
-    $imgCard.style.filter = `${aux} brightness(${$brightness.value})`;
-})
+    applyFilter(`brightness(${ $brightness.value })`);
+});
 
+$opacity.addEventListener('input', () => {
+    applyFilter(`opacity(${ $opacity.value })`);
+});
 
+$contrast.addEventListener('input', () => {
+    applyFilter(`contrast(${ $contrast.value })`);
+});
 
+$blur.addEventListener('input', () => {
+    applyFilter(`blur(${ $blur.value })`);
+});
 
+$grayscale.addEventListener('input', () => {
+    applyFilter(`grayscale(${ $grayscale.value })`);
+});
 
+$sepia.addEventListener('input', () => {
+    applyFilter(`sepia(${ $sepia.value })`);
+});
+
+$hueRotate.addEventListener('input', () => {
+    applyFilter(`hue-rotate(${ $hueRotate.value }deg)`);
+});
+
+$saturate.addEventListener('input', () => {
+    applyFilter(`saturate(${ $saturate.value })`);
+});
+
+$invert.addEventListener('input', () => {
+    applyFilter(`invert(${ $invert.value })`);
+});
 
 
 // ---- PANEL TEXTO - FUNCIONES PARA EL MANEJO DEL PANEL DE EDICION DE TEXTO -----------
