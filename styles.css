@@ -4,7 +4,11 @@
     --dark-bg: #380116;
     --darker-mode: #25000e;
     --dark-hover: #5d0124;
+    --dark-aside: #2f0112;
     --main-font: "Michroma", sans-serif;
+    --light-bg: #fec5bb;
+    --lighter-mode: #fcd5ce;
+    --light-hover: #fae1dd;
 }
 
 /* NOMBRES DE LAS FUENTES PARA ELEGIR::
@@ -29,8 +33,6 @@ font-family: "Michroma", serif;
 }
 
 body{
-    background-color: var(--dark-bg);
-    color: white;
     font-family: var(--main-font);
     position: relative;
 }
@@ -38,7 +40,6 @@ body{
 /* Estilos del HEADER - titulo y los botones del control */
 
 #container-header {
-    background-color: var(--darker-mode);
     height: 130px;
     display: flex;
     flex-direction: column;
@@ -139,7 +140,6 @@ body{
     bottom: 0;
     font-size: 10px;
     width: 270px;
-    background-color: #2f0112;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -345,16 +345,35 @@ input[type="color"]::-webkit-color-swatch-wrapper {
 
 /* MODO CLARO */
 
-.light-mode-header{
-    background-color: #dcbbc7 !important;
+.light-theme-header{
+    background-color: var(--light-bg);
     color: rgb(44, 44, 44);
 }
 
+.light-theme-body{
+    background-color: var(--lighter-mode);
+    color: rgb(44, 44, 44);
+}
 
+.light-theme-aside{
+    background-color: var(--light-hover);
+    color: rgb(44, 44, 44);
+}
 
+.dark-theme-body{
+    background-color: var(--dark-bg);
+    color: white;
+}
 
+.dark-theme-header{
+    background-color: var(--darker-mode);
+    color: white;
+}
 
-
+.dark-theme-aside{
+    background-color: var(--dark-aside);
+    color: white;
+}
 
 
 .hidden{

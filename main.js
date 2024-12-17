@@ -4,10 +4,13 @@ const $ = (element) => document.querySelector(element);
 
 // 
 // -------------------------------------------------------------------------- ELEMENTOS DEL DOM -------------------------------------------------------------------------------
-
-const $card = $('#meme-card')
+const $body = $('#container-editor');
+const $header = $('#container-header');
+const $card = $('#meme-card');
 const $imgBtn = $('#img-btn');
-const $textBtn = $('#text-btn')
+const $textBtn = $('#text-btn');
+const $lightModeBtn = $('#light-mode-btn');
+const $darkModeBtn = $('#dark-mode-btn');
 const $aside = $('#edit-container-aside');
 const $editImg = $('#edit-img');
 const $editText = $('#edit-text');
@@ -77,6 +80,31 @@ $closeBtn.addEventListener('click', () => {
     $editText.classList.add('hidden');
     $editImg.classList.add('hidden');
 })
+
+// La funcion de cambiar a modo claro y al revez
+
+$lightModeBtn.addEventListener('click', () => {
+    $header.classList.remove('dark-theme-header');
+    $header.classList.add('light-theme-header');
+    $body.classList.remove('dark-theme-body');
+    $body.classList.add('light-theme-body');
+    $aside.classList.remove('dark-theme-aside');
+    $aside.classList.add('light-theme-aside');
+    $darkModeBtn.classList.remove('hidden');
+    $lightModeBtn.classList.add('hidden');
+});
+
+$darkModeBtn.addEventListener('click', () => {
+    $header.classList.remove('light-theme-header');
+    $header.classList.add('dark-theme-header');
+    $body.classList.remove('light-theme-body');
+    $body.classList.add('dark-theme-body');
+    $aside.classList.remove('light-theme-aside');
+    $aside.classList.add('dark-theme-aside');
+    $darkModeBtn.classList.add('hidden');
+    $lightModeBtn.classList.remove('hidden');
+})
+
 
 
 // -------------------------------------------------------------------------------- MEME ------------------------------------------------------------------------------------

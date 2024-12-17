@@ -24,7 +24,7 @@
 <body>
     <!--  HEADER con titulo y botones  -->
 
-    <header id="container-header">
+    <header class="dark-theme-header" id="container-header">
 
         <h1 id="title-header">Generador de Memes</h1>
 
@@ -32,7 +32,8 @@
 
             <button class="header-btn" id="img-btn"><i class="bi bi-file-earmark-image-fill"></i>Imagen</button>
             <button class="header-btn" id="text-btn"><i class="bi bi-chat-left-heart"></i>Texto</button>
-            <button class="header-btn" id="dark-mode-btn"><i class="bi bi-lightbulb-off"></i>Modo oscuro</button>
+            <button class="header-btn" id="light-mode-btn"><i class="bi bi-lightbulb"></i>Modo claro</button>
+            <button class="header-btn hidden" id="dark-mode-btn"><i class="bi bi-lightbulb-off"></i>Modo oscuro</button>
 
         </div>
 
@@ -41,7 +42,7 @@
     <!--  FIN DEL HEADER  -->
 
     <!-- MAIN - EL ESPACIO PARA CREAR EL MEME -->
-    <div id="container-editor">
+    <div id="container-editor" class="dark-theme-body">
 
         <main class="container-meme" id="meme-container">
 
@@ -61,7 +62,7 @@
 
         <!-- ASIDE - opciones para editar el meme -->
 
-        <aside class="edit hidden" id="edit-container-aside">
+        <aside class="edit hidden dark-theme-aside" id="edit-container-aside">
 
             <button class="close-btn" id="close-btn"><i class="bi bi-x-circle"></i></button>
 
