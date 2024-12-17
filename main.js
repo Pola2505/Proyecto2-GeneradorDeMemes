@@ -47,6 +47,7 @@ const $shadowWhite = $('#shadow-white');
 const $shadowBlack = $('#shadow-black');
 const $inputPadding = $('#input-padding');
 const $interlineado = $('#interlineado');
+const $michroma = $('#michroma');
 
 
 // -------------------------------------------------------------------------------- HEADER ------------------------------------------------------------------------------------
@@ -103,7 +104,8 @@ $urlInput.addEventListener('input', () => {
     $imgCard.style.backgroundImage = `url(${url})`;
     $imgCard.style.backgroundSize = 'cover';
     $imgCard.style.backgroundRepeat = 'no-repeat';
-    $imgCard.backgroundPosition = 'center';
+    $imgCard.backgroundPositionX = 'center';
+    $imgCard.backgroundPositionY = 'center';
 })
 
 // La funcion para cambiar el color del fondo de la imagen y mostrar el codigo del color
@@ -203,8 +205,10 @@ $bottomText.addEventListener('input', () => {
 $checkboxTop.addEventListener('input', (e) => {
     if( e.target.checked ) {
         $topCard.innerText = '';
+        $topCard.style.display = 'none';
     } else {
-        $topCard.innerText = 'TOP TEXT'
+        $topCard.innerText = 'TOP TEXT';
+        $topCard.style.display = 'block';
     }
 })
 
@@ -213,8 +217,10 @@ $checkboxTop.addEventListener('input', (e) => {
 $checkboxBottom.addEventListener('input', (e) => {
     if( e.target.checked ) {
         $bottomCard.innerText = '';
+        $bottomCard.style.display = 'none';
     } else {
         $bottomCard.innerText = 'BOTTOM TEXT';
+        $bottomCard.style.display = 'block';
     }
 })
 
@@ -296,16 +302,38 @@ $shadowBlack.addEventListener('click', () => {
 // Espaciado al texto - padding bottom y top
 
 $inputPadding.addEventListener('input', () => {
-    $topCard.style.paddingBottom = `${$inputPadding.value}px`;
-    $topCard.style.paddingTop = `${$inputPadding.value}px`;
-    $bottomCard.style.paddingBottom = `${$inputPadding.value}px`;
-    $bottomCard.style.paddingTop = `${$inputPadding.value}px`;
+    $topCard.style.padding = `${$inputPadding.value}px`;
+    $bottomCard.style.padding = `${$inputPadding.value}px`;
 })
 
 // Funcion de interlineado 
 
 $interlineado.addEventListener('input', () => {
     $topCard.style.lineHeight = `${$interlineado.value}`;
+})
+
+// Restablecer los filtros de Texto
+
+$resetText.addEventListener('click', () => {
+    $topCard.innerText = 'TOP TEXT';
+    $topText.value = '';
+    $bottomCard.innerText = 'BOTTOM TEXT';
+    $bottomText.value = '';
+    $checkboxBottom.checked = false;
+    $checkboxTop.checked = false;
+    $card.style.fontFamily = `"Michroma", sans-serif`;
+    $selectFont.value = 'Orbitron';
+    $topCard.style.fontSize = '23px';
+    $bottomCard.style.fontSize = '23px';
+    $fontSize.value = 23;
+    $topCard.style.textAlign = `${$alignCenter.value}`;
+    $bottomCard.style.textAlign = `${$alignCenter.value}`;
+    $topCard.style.color = 'black';
+    $bottomCard.style.color = 'black';
+    $topCard.style.backgroundColor = 'white';
+    $bottomCard.style.backgroundColor = 'white';
+    $textColor.value = '#000000';
+    $textBgColor.value = '#FFFFFF';
 })
 
 
