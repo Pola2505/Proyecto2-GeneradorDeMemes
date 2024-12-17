@@ -318,9 +318,19 @@ $checkboxTransparent.addEventListener('input', (e) => {
     if(e.target.checked) {
         $topCard.style.backgroundColor = 'transparent';
         $bottomCard.style.backgroundColor = 'transparent';
+        $topCard.style.position = 'absolute';
+        $topCard.style.top = 0;
+        $topCard.style.left = '250px';
+        $bottomCard.style.position = 'absolute';
+        $bottomCard.style.bottom = 0;
+        $bottomCard.style.left = '250px';
+        $card.style.position ='relative';
     } else {
         $topCard.style.backgroundColor = `${$textBgColor.value}`;
         $bottomCard.style.backgroundColor = `${$textBgColor.value}`;
+        $topCard.style.position = 'static'
+        $bottomCard.style.position = 'static'
+        $card.style.position = 'static';
     }
 
 })
