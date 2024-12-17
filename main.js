@@ -115,61 +115,82 @@ $bgColor.addEventListener('input', () => {
     $bgColorCode.innerText = $bgColor.value;
 })
 
-// Aplicando los filtros en la imagen 
+// Almacenar los valores predeterminados de los filtros en una variable
+
+let currentFilters = {
+    brightness: 1,
+    opacity: 1,
+    contrast: 100,
+    blur: 0,
+    grayscale: 0,
+    sepia: 0,
+    hueRotate: 0,
+    saturate: 100, 
+    invert: 0
+}
+
+// la funcion para acumular todos los filtros pero actualizar si alguno cambia
+
+const applyFilters = () => {
+    $imgCard.style.filter = `
+        brightness(${currentFilters.brightness})
+        opacity(${currentFilters.opacity})
+        contrast(${currentFilters.contrast}%)
+        blur(${currentFilters.blur}px)
+        grayscale(${currentFilters.grayscale}%)
+        sepia(${currentFilters.sepia}%)
+        hue-rotate(${currentFilters.hueRotate}deg)
+        saturate(${currentFilters.saturate}%)
+        invert(${currentFilters.invert})
+    `
+}
+
+// aplicando los escuchadores a todos los filtros de la imagen
 
 $brightness.addEventListener('input', () => {
-
-    $imgCard.style.filter = `brightness(${ $brightness.value })`;
-   
-});
+    currentFilters.brightness = $brightness.value;
+    applyFilters();
+})
 
 $opacity.addEventListener('input', () => {
-    
-    $imgCard.style.filter = `opacity(${ $opacity.value })`;
-
-});
+    currentFilters.opacity = $opacity.value;
+    applyFilters();
+})
 
 $contrast.addEventListener('input', () => {
-   
-    $imgCard.style.filter = `contrast(${ $contrast.value }%)`;
-
-});
+    currentFilters.contrast = $contrast.value;
+    applyFilters();
+})
 
 $blur.addEventListener('input', () => {
-
-    $imgCard.style.filter = `blur(${ $blur.value }px)`;
-
-});
+    currentFilters.blur = $blur.value;
+    applyFilters();
+})
 
 $grayscale.addEventListener('input', () => {
-    
-    $imgCard.style.filter = `grayscale(${ $grayscale.value }%)`;
-
-});
+    currentFilters.grayscale = $grayscale.value;
+    applyFilters();
+})
 
 $sepia.addEventListener('input', () => {
-
-    $imgCard.style.filter = `sepia(${ $sepia.value }%)`;
-
-});
+    currentFilters.sepia = $sepia.value;
+    applyFilters();
+})
 
 $hueRotate.addEventListener('input', () => {
-
-    $imgCard.style.filter = `hue-rotate(${ $hueRotate.value }deg)`;
-
-});
+    currentFilters.hueRotate = $hueRotate.value;
+    applyFilters();
+})
 
 $saturate.addEventListener('input', () => {
-
-    $imgCard.style.filter = `saturate(${ $saturate.value }%)`;
-
-});
+    currentFilters.saturate = $saturate.value;
+    applyFilters();
+})
 
 $invert.addEventListener('input', () => {
-
-    $imgCard.style.filter = `invert(${ $invert.value })`;
-
-});
+    currentFilters.invert = $invert.value;
+    applyFilters();
+})
 
 // Funcion para restablecer los valores cambiados;
 
@@ -180,6 +201,28 @@ $resetImg.addEventListener('click', () => {
     $bgColor.value = '#FFFFFF';
     $bgColorCode.innerText = $bgColor.value;
     $imgCard.style.filter = '';
+
+    currentFilters = {
+        brightness: 1,
+        opacity: 1,
+        contrast: 100,
+        blur: 0,
+        grayscale: 0,
+        sepia: 0,
+        hueRotate: 0,
+        saturate: 100, 
+        invert: 0
+    }
+
+    $brightness.value = 1;
+    $opacity.value = 1;
+    $contrast.value = 100;
+    $blur.value = 0;
+    $grayscale.value = 0;
+    $sepia.value = 0;
+    $hueRotate.value = 0;
+    $saturate.value = 100;
+    $invert.value = 0;
 })
 
 
@@ -335,6 +378,7 @@ $resetText.addEventListener('click', () => {
     $textColor.value = '#000000';
     $textBgColor.value = '#FFFFFF';
 })
+
 
 
 
