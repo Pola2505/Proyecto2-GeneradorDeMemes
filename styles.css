@@ -421,4 +421,30 @@ textarea::placeholder {
 }
 
 
+@media(max-width: 640px) {
+    #container-editor #meme-container #meme-card {
+        width: 350px;
+        height: 350px;
+    }
+
+    .txt{
+        font-size: 15px;
+    }
+}
+
+
+@media(max-width: 450px) {
+    h1{
+        font-size: 18px;
+    }
+
+    #container-editor #meme-container #meme-card {
+        width: 300px;
+        height: 300px;
+    }
+
+    #container-header #container-btn-header .header-btn {
+        font-size: 14px;
+    }
+}
 
