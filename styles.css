@@ -41,6 +41,10 @@ body{
     display: none !important;
 }
 
+button{
+    cursor: pointer;
+}
+
 
 /* -----  ------ ------- ------- ------- ------- ------ Estilos del HEADER -----  ------ ------- ------- ------- ------- ------ */
 
@@ -159,6 +163,7 @@ body{
     font-size: 20px;
     margin: 10px 20px;
     cursor: pointer;
+    color: white;
 }
 
 #edit-container-aside .title-panel{
@@ -170,6 +175,9 @@ body{
     padding: 15px 5px;
 }
 
+select:focus, input:focus{
+    outline-color: grey;
+}
 /* -----  ------ ------- ------- ------- ------- ------ Los estilos del panel del IMAGEN -----  ------ ------- ------- ------- ------- ------*/
 
 /* img */
@@ -272,6 +280,12 @@ input[type="color"]::-webkit-color-swatch-wrapper {
     height: 40px;
     margin-top: 20px;
     border-radius: 10px;
+    transition: transform 0.4s ease-in-out;
+}
+
+.btn-reset:hover{
+    background-color: #7c0533;
+    transform: scale(1.1);
 }
 
 /* -----  ------ ------- ------- ------- ------- ------ Estilos del PANEL DEL TEXTO -----  ------ ------- ------- ------- ------- ------ */
@@ -287,6 +301,13 @@ input[type="color"]::-webkit-color-swatch-wrapper {
     padding: 10px 0;
 }
 
+input[type="checkbox"] {
+    accent-color: var(--dark-hover);
+}
+
+textarea::placeholder {
+    padding: 10px;
+}
 
 .edit-text .checkbox-text .checkbox-label{
     padding-left: 5px;
@@ -307,6 +328,15 @@ input[type="color"]::-webkit-color-swatch-wrapper {
     padding: 10px;
 }
 
+.align-button{
+    transition: transform 0.4s ease-in-out;
+}
+
+.align-button:hover{
+    background-color: grey;
+    transform: scale(1.1);
+}
+
 .edit-text #text-align-container{
     flex: 2;
     margin-left: 10px;
@@ -319,17 +349,19 @@ input[type="color"]::-webkit-color-swatch-wrapper {
     color: white;
 }
 
-.edit-text .color-text{
-    background-color: var(--dark-hover);
-}
-
 .edit-text #color-bg-container-text{
     display: flex;
+    justify-content: space-between;
 }
 
 .edit-text #color-bg-container-text .color-text{
-    width: 100px;
+    width: 90px;
     height: 30px;
+    background-color: var(--dark-hover);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-right: 20px;
 }
 
 .contorno-btn button{
@@ -337,6 +369,12 @@ input[type="color"]::-webkit-color-swatch-wrapper {
     color: white;
     border: none;
     padding: 5px 15px;
+    transition: transform 0.4s ease-in-out;
+}
+
+.contorno-btn button:hover{
+    background-color: #7c0533;
+    transform: scale(1.1);
 }
 
 .container-padding #input-padding, .container-interlineado #interlineado{

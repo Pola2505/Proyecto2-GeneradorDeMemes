@@ -52,6 +52,8 @@ const $shadowBlack = $('#shadow-black');
 const $inputPadding = $('#input-padding');
 const $interlineado = $('#interlineado');
 const $michroma = $('#michroma');
+const $colorCodeTxt = $('#color-code-txt');
+const $bgCodeTxt = $('#bg-code-txt');
 
 
 // -------------------------------------------------------------- HEADER --------------------------------------------------------------------------
@@ -345,6 +347,7 @@ $alignRight.addEventListener('click', () => {
 $textColor.addEventListener('input', () => {
     $topCard.style.color = `${$textColor.value}`;
     $bottomCard.style.color = `${$textColor.value}`;
+    $colorCodeTxt.innerText = `${$textColor.value}`;
 })
 
 // Cambiar el color de fondo en TOP TEXT Y BOTTOM TEXT
@@ -352,6 +355,7 @@ $textColor.addEventListener('input', () => {
 $textBgColor.addEventListener('input', () => {
     $topCard.style.backgroundColor = `${$textBgColor.value}`;
     $bottomCard.style.backgroundColor = `${$textBgColor.value}`;
+    $bgCodeTxt.innerText = `${$textBgColor.value}`;
 })
 
 // Poner el fondo transparente al texto
