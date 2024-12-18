@@ -19,6 +19,7 @@ const $urlInput = $('#url-input');
 const $imgCard = $('#img-card');
 const $topText = $('#edit-top-text');
 const $topCard = $('#top-text-card');
+const $selectBlend = $('#select-mode-bg');
 const $bottomText = $('#edit-bottom-text');
 const $bottomCard = $('#bottom-text-card');
 const $bgColor = $('#bg-color');
@@ -147,6 +148,13 @@ $bgColor.addEventListener('input', () => {
     $imgCard.style.backgroundColor = $bgColor.value;
     $bgColorCode.innerText = $bgColor.value;
 })
+
+// La funcion de background-blend-mode en la imagen
+
+$selectBlend.addEventListener('input', () => {
+    $imgCard.style.backgroundBlendMode = `${$selectBlend.value}`;
+})
+
 
 // Almacenar los valores predeterminados de los filtros en una variable
 
