@@ -411,6 +411,7 @@ $inputPadding.addEventListener('input', () => {
 
 $interlineado.addEventListener('input', () => {
     $topCard.style.lineHeight = `${$interlineado.value}`;
+    $bottomCard.style.lineHeight = `${$interlineado.value}`;
 })
 
 // Restablecer los filtros del texto
@@ -435,6 +436,14 @@ $resetText.addEventListener('click', () => {
     $bottomCard.style.backgroundColor = 'white';
     $textColor.value = '#000000';
     $textBgColor.value = '#FFFFFF';
+    $topCard.style.lineHeight = '';
+    $bottomCard.style.lineHeight = '';
+    $interlineado.value = '';
+    $inputPadding.value = 35;
+    $topCard.style.padding = '35px';
+    $bottomCard.style.padding = '35px';
+    $topCard.style.textShadow = 'none';
+    $bottomCard.style.textShadow = 'none';
 })
 
 
