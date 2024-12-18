@@ -51,7 +51,6 @@ const $shadowWhite = $('#shadow-white');
 const $shadowBlack = $('#shadow-black');
 const $inputPadding = $('#input-padding');
 const $interlineado = $('#interlineado');
-const $michroma = $('#michroma');
 const $colorCodeTxt = $('#color-code-txt');
 const $bgCodeTxt = $('#bg-code-txt');
 

@@ -193,6 +193,7 @@ select:focus, input:focus{
     background-color: var(--dark-hover);
     color: white;
     border: none;
+    padding: 5px;
 }
 
 /* img */
@@ -306,7 +307,7 @@ input[type="checkbox"] {
 }
 
 textarea::placeholder {
-    padding: 10px;
+    padding: 5px;
 }
 
 .edit-text .checkbox-text .checkbox-label{
