@@ -4,7 +4,7 @@ const $ = (element) => document.querySelector(element);
 
 // 
 // ------------------------------------------------------- ELEMENTOS DEL DOM y muchos... --------------------------------------------------------------
-const $body = $('#container-editor');
+const $body = $('body');
 const $header = $('#container-header');
 const $card = $('#meme-card');
 const $imgBtn = $('#img-btn');

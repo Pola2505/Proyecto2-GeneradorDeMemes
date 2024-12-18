@@ -35,6 +35,8 @@ font-family: "Michroma", serif;
 body{
     font-family: var(--main-font);
     position: relative;
+    min-height: 100vh;
+    overflow-x: hidden;
 }
 
 .hidden{
@@ -86,7 +88,7 @@ button{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 #container-editor #meme-container{
@@ -126,7 +128,7 @@ button{
 
 #container-editor #meme-container #download-btn {
     margin-top: 30px;
-    margin-bottom: 50px;
+    margin-bottom: 100px;
     padding: 10px 20px;
     border-radius: 10px;
     background-color: #e36414;
