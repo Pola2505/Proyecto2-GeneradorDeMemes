@@ -24,7 +24,7 @@ font-family: "Michroma", serif;
 
 */
 
-/* Estilos generales */
+/* -----  ------ ------- ------- ------- ------- ------ Estilos generales -----  ------ ------- ------- ------- ------- ------ */
 
 *{
     margin: 0;
@@ -37,7 +37,12 @@ body{
     position: relative;
 }
 
-/* Estilos del HEADER - titulo y los botones del control */
+.hidden{
+    display: none !important;
+}
+
+
+/* -----  ------ ------- ------- ------- ------- ------ Estilos del HEADER -----  ------ ------- ------- ------- ------- ------ */
 
 #container-header {
     height: 130px;
@@ -71,7 +76,7 @@ body{
     cursor: pointer;
 }
 
-/* Estilos de la tarjeta del meme - los textos, imagen y el boton de descargar */
+/* -----  ------ ------- ------- ------- ------- ------Estilos del MAIN Y EL MEME -----  ------ ------- ------- ------- ------- ------ */
 
 #container-editor{
     display: flex;
@@ -131,7 +136,7 @@ body{
     margin-right: 10px;
 }
 
-/* Los estilos de los controles de la imagen */
+/* -----  ------ ------- ------- ------- ------- ------ Los estilos del PANEL -----  ------ ------- ------- ------- ------- ------*/
 
 #edit-container-aside {
     position: absolute;
@@ -150,7 +155,6 @@ body{
 #edit-container-aside .close-btn{
     align-self: flex-end;
     background-color: transparent;
-    color: white;
     border: none;
     font-size: 20px;
     margin: 10px 20px;
@@ -162,79 +166,81 @@ body{
     padding: 10px;
 }
 
+.edit .edit-title{
+    padding: 15px 5px;
+}
+
+/* -----  ------ ------- ------- ------- ------- ------ Los estilos del panel del IMAGEN -----  ------ ------- ------- ------- ------- ------*/
+
+/* img */
 #edit-container-aside .container-filter{
     display: flex;
     flex-direction: column;
-    padding: 10px;
-}
-
-.edit .edit-title{
-    padding: 10px;
+    padding: 10px 5px;
 }
 
 .edit .edit-input, .edit-text .edit-input, #select-font{
     height: 35px;
-    width: 95%;
+    width: 100%;
     background-color: var(--dark-hover);
     color: white;
     border: none;
-    padding: 10px;
 }
 
+/* img */
 .edit .edit-input:focus{
     outline: 1px dashed white;
     background-color: #7c0533;
 }
 
-
+/* img */
 #edit-img #bg-color-options{
     display: flex;
     justify-content: space-between;
-    width: 95%;
+    width: 100%;
+    padding: 5px;
 }
-
+/* img */
 #edit-img #bg-color-options #edit-container-options-bg{
     background-color: var(--dark-hover);
     display: flex;
-    padding: 7px;
-}
-
-#edit-img #bg-color-options #edit-container-options-bg span{
-    padding-left: 10px;
+    justify-content: space-around;
+    align-items: center;
     font-size: 12px;
+    width: 100px;
 }
 
 /* hacer que el input de color type no tenga el borde gris sino que sea un pequeno circulo */
-
+/* img */
 input[type="color"] {
     -webkit-appearance: none;  
     -moz-appearance: none;     
     appearance: none;
     width: 20px;  
     height: 20px; 
-    padding: 0;
+    padding: 2px;
     border: none;
     border-radius: 50%;  
     cursor: pointer;
     background-color: transparent;
     box-shadow: none;  
 }
-  
+  /* img */
 input[type="color"]::-webkit-color-swatch-wrapper {
     padding: 0;  
 }
-  
+  /* img */
   input[type="color"]::-webkit-color-swatch {
     border-radius: 50%; 
 }
-
+/* img */
 #bg-color-options #edit-modes-options #select-mode-bg{
     background-color: #5d0124;
     color: white;
-    padding: 10px;
+    padding: 7px;
     border: none;
 }
-
+/* img */
 /* FILTROS */
 
 #filters-all .container-filter label{
@@ -250,7 +256,7 @@ input[type="color"]::-webkit-color-swatch-wrapper {
 #filters-all .container-filter input[type="range"]:hover {
   accent-color: var(--dark-hover);
 }
-
+/* IMG */
 #edit-img{
     display: flex;
     flex-direction: column;
@@ -268,10 +274,12 @@ input[type="color"]::-webkit-color-swatch-wrapper {
     border-radius: 10px;
 }
 
-/* TEXTO - opciones para editar el texto */
+/* -----  ------ ------- ------- ------- ------- ------ Estilos del PANEL DEL TEXTO -----  ------ ------- ------- ------- ------- ------ */
 
 .edit-text{
     padding: 10px;
+    display: flex;
+    flex-direction: column;
 }
 
 .edit-text .text-options{
@@ -343,7 +351,7 @@ input[type="color"]::-webkit-color-swatch-wrapper {
     width: 100%;
 }
 
-/* MODO CLARO */
+/* -----  ------ ------- ------- ------- ------- ------ ------- MODO CLARO  -----  ------ ------- ------- ------- ------- ------ */
 
 .light-theme-header{
     background-color: var(--light-bg);
@@ -360,6 +368,8 @@ input[type="color"]::-webkit-color-swatch-wrapper {
     color: rgb(44, 44, 44);
 }
 
+/* -----  ------ ------- ------- ------- ------- ------ ------- MODO OSCURO  -----  ------ ------- ------- ------- ------- ------ */
+
 .dark-theme-body{
     background-color: var(--dark-bg);
     color: white;
@@ -375,9 +385,5 @@ input[type="color"]::-webkit-color-swatch-wrapper {
     color: white;
 }
 
-
-.hidden{
-    display: none !important;
-}
 
 

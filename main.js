@@ -3,7 +3,7 @@
 const $ = (element) => document.querySelector(element);
 
 // 
-// -------------------------------------------------------------------------- ELEMENTOS DEL DOM -------------------------------------------------------------------------------
+// ------------------------------------------------------- ELEMENTOS DEL DOM y muchos... --------------------------------------------------------------
 const $body = $('#container-editor');
 const $header = $('#container-header');
 const $card = $('#meme-card');
@@ -53,11 +53,11 @@ const $interlineado = $('#interlineado');
 const $michroma = $('#michroma');
 
 
-// -------------------------------------------------------------------------------- HEADER ------------------------------------------------------------------------------------
+// -------------------------------------------------------------- HEADER --------------------------------------------------------------------------
 
 
 
-// Abrir las opciones de edicion de imagen
+// Abrir el panel de imagen
 
 $imgBtn.addEventListener('click', () => {
     $aside.classList.remove('hidden');
@@ -65,7 +65,7 @@ $imgBtn.addEventListener('click', () => {
     $editText.classList.add('hidden');
 })
 
-// Abrir las opciones de edicion del texto
+// Abrir el panel de texto
 
 $textBtn.addEventListener('click', () => {
     $aside.classList.remove('hidden');
@@ -73,7 +73,7 @@ $textBtn.addEventListener('click', () => {
     $editImg.classList.add('hidden');
 })
 
-// La funcion de cerrar el panel de control - por las dudas lo aplique para todos los 3 elementos
+// El boton de cerrar los paneles 
 
 $closeBtn.addEventListener('click', () => {
     $aside.classList.add('hidden');
@@ -81,7 +81,7 @@ $closeBtn.addEventListener('click', () => {
     $editImg.classList.add('hidden');
 })
 
-// La funcion de cambiar a modo claro y al revez
+// Cambiar de modo oscuro al modo claro y del claro al oscuro
 
 $lightModeBtn.addEventListener('click', () => {
     $header.classList.remove('dark-theme-header');
@@ -92,6 +92,8 @@ $lightModeBtn.addEventListener('click', () => {
     $aside.classList.add('light-theme-aside');
     $darkModeBtn.classList.remove('hidden');
     $lightModeBtn.classList.add('hidden');
+    $bgColorCode.style.color = 'white';
+    $closeBtn.style.color = 'black';
 });
 
 $darkModeBtn.addEventListener('click', () => {
@@ -103,37 +105,40 @@ $darkModeBtn.addEventListener('click', () => {
     $aside.classList.add('dark-theme-aside');
     $darkModeBtn.classList.add('hidden');
     $lightModeBtn.classList.remove('hidden');
+    $closeBtn.style.color = 'white';
 })
 
 
 
-// -------------------------------------------------------------------------------- MEME ------------------------------------------------------------------------------------
+// --------------------------------------------------------------- MEME -------------------------------------------------------------------------
+
+// El boton para descargar el meme
 
 $downloadBtn.addEventListener("click", () => {
-    // $card.style.width = "500px"
+
     domtoimage.toBlob($card).then((blob) => {
         saveAs(blob, "mi-meme.png");
-    }).catch((error) =>{
+    }).catch((error) => {
         console.log (error)
-    } ) ;
+    });
 
 })
 
 
 
-// -------------------------------------------------------------------------------- IMAGEN ------------------------------------------------------------------------------------
+// -------------------------------------------------------------- IMAGEN -------------------------------------------------------------------------
 
 
 
-// La funcion para pegar la url de la imagen y que aparezca en el cuadrado del meme
+// La funcion de cargar la imagen en la URL
 
 $urlInput.addEventListener('input', () => {
     let url = $urlInput.value;
     $imgCard.style.backgroundImage = `url(${url})`;
     $imgCard.style.backgroundSize = 'cover';
     $imgCard.style.backgroundRepeat = 'no-repeat';
-    $imgCard.backgroundPositionX = 'center';
-    $imgCard.backgroundPositionY = 'center';
+    $imgCard.style.backgroundPositionX = 'center';
+    $imgCard.style.backgroundPositionY = 'center';
 })
 
 // La funcion para cambiar el color del fondo de la imagen y mostrar el codigo del color
@@ -157,7 +162,7 @@ let currentFilters = {
     invert: 0
 }
 
-// la funcion para acumular todos los filtros pero actualizar si alguno cambia
+// la funcion para acumular todos los filtros pero actualizar si alguno cambia - lo hice asi porque con el aux lo que me pasaba era que los filtros se aplicaban varias veces y la imagen desaparecia y con esto me funciono
 
 const applyFilters = () => {
     $imgCard.style.filter = `
@@ -220,7 +225,7 @@ $invert.addEventListener('input', () => {
     applyFilters();
 })
 
-// Funcion para restablecer los valores cambiados;
+// Funcion para restablecer los valores en la imagen y que el rango vuelva a su lugar
 
 $resetImg.addEventListener('click', () => {
     $urlInput.value = '';
@@ -256,7 +261,7 @@ $resetImg.addEventListener('click', () => {
 
 
 
-// -------------------------------------------------------------------------------- TEXTO ------------------------------------------------------------------------------------
+// -------------------------------------------------------------- TEXTO ---------------------------------------------------------------------------
 
 
 // Funcion para cargar el texto superior
@@ -380,20 +385,20 @@ $shadowBlack.addEventListener('click', () => {
     $bottomCard.style.textShadow = 'rgb(0, 0, 0) 2px 2px 0px, rgb(0, 0, 0) -2px 2px 0px, rgb(0, 0, 0) 2px -2px 0px, rgb(0, 0, 0) -2px -2px 0px';
 })
 
-// Espaciado al texto - padding bottom y top
+// Espaciado al texto - padding 
 
 $inputPadding.addEventListener('input', () => {
     $topCard.style.padding = `${$inputPadding.value}px`;
     $bottomCard.style.padding = `${$inputPadding.value}px`;
 })
 
-// Funcion de interlineado 
+// Funcion de interlineado - line-height
 
 $interlineado.addEventListener('input', () => {
     $topCard.style.lineHeight = `${$interlineado.value}`;
 })
 
-// Restablecer los filtros de Texto
+// Restablecer los filtros del texto
 
 $resetText.addEventListener('click', () => {
     $topCard.innerText = 'TOP TEXT';
