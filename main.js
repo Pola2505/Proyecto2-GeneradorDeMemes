@@ -97,6 +97,8 @@ $lightModeBtn.addEventListener('click', () => {
     $lightModeBtn.classList.add('hidden');
     $bgColorCode.style.color = 'white';
     $closeBtn.style.color = 'black';
+    $bgCodeTxt.style.color = 'white';
+    $colorCodeTxt.style.color = 'white';
 });
 
 $darkModeBtn.addEventListener('click', () => {
