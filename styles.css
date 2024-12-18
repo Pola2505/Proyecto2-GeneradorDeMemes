@@ -282,10 +282,6 @@ input[type="color"]::-webkit-color-swatch-wrapper {
     flex-direction: column;
 }
 
-.edit-text .text-options{
-    margin: 10px 0;
-}
-
 .edit-text .checkbox-text{
     display: flex;
     padding: 10px 0;
